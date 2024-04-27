@@ -1,5 +1,6 @@
 <template>
   <q-btn @click="printerStore.setActiveTab(0)">К таблице печати</q-btn>
+  <q-btn @click="printerStore.setActiveTab(6)">К диаграмме рабочего времени</q-btn>
   <div id="el"></div>
 
 </template>
@@ -25,12 +26,9 @@ export default {
 
   methods: {
     start : function() {
-      console.log(this.chartsData)
       for (let printer of this.printers){
-        console.log(printer.printerName)
         this.createChart(printer.printerName);
       }
-      console.log('sumStatistic');
       this.createChart('sumStatistic');
     },
     //создаем диаграммы для принтера по его имени
@@ -40,7 +38,7 @@ export default {
       let el=document.querySelector('#el')
 
       newCh.style.height='35%';
-      newCh.classList.add('fullscreen')
+      newCh.classList.add('fullscreen');
       newCh.style.borderStyle='solid';
       newCh.style.borderColor='black'
       el.append(newCh);

@@ -57,6 +57,9 @@
     <div v-if="printerStore.activeTab===3">
       <charts-of-printers/>
     </div>
+    <div class="fullscreen" v-if="printerStore.activeTab===6">
+      <CustomChart/>
+    </div>
   </q-page>
 </template>
 
@@ -69,6 +72,7 @@ import { ref, watch } from 'vue'
 import SelectFilteredDates from "components/selectFilteredDates.vue";
 import GeneralStatistics from "components/generalStatistics.vue";
 import ChartsOfPrinters from "components/chartsOfPrinters.vue";
+import CustomChart from "components/CustomChart.vue";
 
 
 const columns = [
@@ -154,6 +158,7 @@ export default defineComponent({
 
 
   components : {
+    CustomChart,
     ChartsOfPrinters,
     GeneralStatistics,
     SelectFilteredDates,
